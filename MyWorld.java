@@ -1,5 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
+import java.util.Vector;
+
 /**
  * Write a description of class MyWorld here.
  * 
@@ -8,14 +10,31 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class MyWorld extends World
 {
-
     /**
      * Constructor for objects of class MyWorld.
      * 
      */
+//    public Vector
+
     public MyWorld()
-    {    
+    {
+
+        super(Singleton.largura * 2 + 4, Singleton.altura *  2 + 4, Singleton.tile_tamanho / 4);
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(600, 400, 1); 
+        //GreenfootImage fundo = new GreenfootImage(Singleton.largura * Singleton.tile_tamanho / 2, Singleton.altura * Singleton.tile_tamanho);
+        
+
+        prepare();
+    }
+    /**
+     * Prepare the world for the start of the program.
+     * That is: create the initial objects and add them to the world.
+     */
+    private void prepare()
+    {
+        Tabuleiro tabuleiro = new Tabuleiro();
+        addObject(tabuleiro, 0, 0);
+        tabuleiro.drawWorld();
+
     }
 }
