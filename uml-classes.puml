@@ -1,0 +1,48 @@
+@startuml
+class Turno{
+Int Turno
+Navio navios
+}
+
+class Tabuleiro{
+Vector tiles<Vector<Tile>>
+Tile tile_selecionado
+}
+
+Tabuleiro --|> World
+Menu --|> World
+
+interface Navio {
+Bool selecionado
+
+getVida()
+getPos()
+void atirar()
+}
+
+Enum Imagem_Tile {
+MAR
+MARGEM
+TERRA
+MONTANHA
+}
+
+class Tile {
+Greenfootimage image
+}
+
+class NavioGrande {
+}
+
+class NavioMedio {
+}
+
+class NavioPequeno {
+}
+
+' classe implementa ..|> interface'
+
+NavioGrande ..|> Navio
+NavioMedio ..|> Navio
+NavioPequeno ..|> Navio
+@enduml
