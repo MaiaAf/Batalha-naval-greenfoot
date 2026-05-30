@@ -19,11 +19,7 @@ public class Tabuleiro extends Actor
     private int borda = 2;
 
     public Tabuleiro(){
-        GreenfootImage fundo = new GreenfootImage(largura, altura);
-        fundo.drawRect(0,0, largura, altura);
-        fundo.setColor(new greenfoot.Color(25,40,0));
-        fundo.fill();
-        fundo.drawImage(new GreenfootImage("grama.png"), 1, 1);
+
     }
     
 
