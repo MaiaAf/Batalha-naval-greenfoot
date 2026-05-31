@@ -37,8 +37,8 @@ public class MyWorld extends World
     private void prepare()
     {
         Tabuleiro tabuleiro = new Tabuleiro();
-        addObject(tabuleiro, 0, 0);
+        addObject(tabuleiro, Singleton.largura * 2 - 2, Singleton.altura *  2 - 2);
         tabuleiro.drawWorld();
-
+    
     }
 }

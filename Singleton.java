@@ -9,8 +9,8 @@ public class Singleton
     // instance variables - replace the example below with your own
 //    private int x;
     static public final int tile_tamanho = 32;
-    static public final int largura = 64;
-    static public final int altura = 32;
+    static public final int largura = 80;
+    static public final int altura = 40;
 
 
     /**

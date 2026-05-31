@@ -25,7 +25,11 @@ public class Tabuleiro extends Actor
 
 
     void drawWorld(){
-
+        GreenfootImage img = new GreenfootImage(Singleton.largura * 32, Singleton.altura * 32);
+        GreenfootImage grama = new GreenfootImage("images/grama.png");
+        GreenfootImage mar = new GreenfootImage("images/mar.png");
+        GreenfootImage montanha = new GreenfootImage("images/montanha.png");
+        GreenfootImage tileatual = mar;
         int coluna_offset = 0;
         for (int i = largura / 2 + borda; i < largura + borda; i++) {
 
@@ -36,17 +40,21 @@ public class Tabuleiro extends Actor
                 int rng = Greenfoot.getRandomNumber(100);
                 if (rng < 10){
                     novo_tile.setImage("grama.png");
+                    //tileatual = grama;
                 }
-                if (rng > 95){
+                else if (rng > 95){
                     novo_tile.setImage("montanha.png");
+                   //tileatual = montanha;
+                } else {
+                    //tileatual = mar;
                 }
-
+                //img.drawImage(tileatual, i * 16 - linha_offset * 8, j * 8 + coluna_offset * 8);
                 getWorld().addObject(novo_tile, i * 2 - linha_offset, j + coluna_offset);
             }
             coluna_offset++;
         }
 
-
+        setImage(img);
     }
 
     public void act()
