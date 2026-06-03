@@ -19,13 +19,12 @@ public class MyWorld extends World
     public MyWorld()
     {
 
-        super(Singleton.largura * 2 + 4, Singleton.altura *  2 + 4, Singleton.tile_tamanho / 4);
+        super(Singleton.largura * 4 + 4, Singleton.altura *  2 + 4, Singleton.tile_tamanho / 4);
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         //GreenfootImage fundo = new GreenfootImage(Singleton.largura * Singleton.tile_tamanho / 2, Singleton.altura * Singleton.tile_tamanho);
         GreenfootImage fundo = new GreenfootImage(Singleton.largura, Singleton.altura);
         fundo.setColor(new greenfoot.Color(125,140,225));
-        fundo.fillRect(0,0, Singleton.largura, Singleton.altura);
-//        fundo.drawImage(new GreenfootImage("grama.png"), 1, 1);
+        fundo.fillRect(0,0, Singleton.largura * 4 + 4, Singleton.altura *  2 + 4);
         setBackground(fundo);
 
         prepare();
@@ -37,7 +36,7 @@ public class MyWorld extends World
     private void prepare()
     {
         Tabuleiro tabuleiro = new Tabuleiro();
-        addObject(tabuleiro, Singleton.largura * 2 - 2, Singleton.altura *  2 - 2);
+        addObject(tabuleiro, Singleton.largura * 4 - 2, Singleton.altura *  2 - 2);
         tabuleiro.drawWorld();
     
     }

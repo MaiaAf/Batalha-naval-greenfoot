@@ -1,19 +1,30 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-
 /**
  * Write a description of class Tile here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Tile extends Actor
+public class Tile  
 {
+    // instance variables - replace the example below with your own
+    private int x;
+
     /**
-     * Act - do whatever the Tile wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
+     * Constructor for objects of class Tile
      */
-    public void act()
+    public Tile()
     {
-        // Add your action code here.
+    }
+
+    /**
+     * An example of a method - replace this comment with your own
+     * 
+     * @param  y   a sample parameter for a method
+     * @return     the sum of x and y 
+     */
+    public int sampleMethod(int y)
+    {
+        // put your code here
+        return x + y;
     }
 }

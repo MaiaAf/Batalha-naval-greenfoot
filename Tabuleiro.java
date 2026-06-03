@@ -1,5 +1,4 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-
 import java.awt.*;
 
 /**
@@ -17,6 +16,7 @@ public class Tabuleiro extends Actor
     private int altura = Singleton.altura;
     private int largura = Singleton.largura;
     private int borda = 2;
+    private Tile[][] tiles = new Tile[largura][altura];
 
     public Tabuleiro(){
 
@@ -25,31 +25,20 @@ public class Tabuleiro extends Actor
 
 
     void drawWorld(){
-        GreenfootImage img = new GreenfootImage(Singleton.largura * 32, Singleton.altura * 32);
+        GreenfootImage img = new GreenfootImage(largura * Singleton.tile_tamanho * 2 - 4, altura * Singleton.tile_tamanho - 4);
         GreenfootImage grama = new GreenfootImage("images/grama.png");
         GreenfootImage mar = new GreenfootImage("images/mar.png");
         GreenfootImage montanha = new GreenfootImage("images/montanha.png");
         GreenfootImage tileatual = mar;
+        
         int coluna_offset = 0;
-        for (int i = largura / 2 + borda; i < largura + borda; i++) {
-
+        for (int i = 0; i < largura; i++) {
             int linha_offset = 0;
-            for (int j = borda; j < altura + borda; j++) {
+            for (int j = 0; j < altura; j++) {
                 linha_offset += 2;
                 Tile novo_tile = new Tile();
-                int rng = Greenfoot.getRandomNumber(100);
-                if (rng < 10){
-                    novo_tile.setImage("grama.png");
-                    //tileatual = grama;
-                }
-                else if (rng > 95){
-                    novo_tile.setImage("montanha.png");
-                   //tileatual = montanha;
-                } else {
-                    //tileatual = mar;
-                }
-                //img.drawImage(tileatual, i * 16 - linha_offset * 8, j * 8 + coluna_offset * 8);
-                getWorld().addObject(novo_tile, i * 2 - linha_offset, j + coluna_offset);
+                img.drawImage(tileatual, (largura + i + borda) * 16 - linha_offset * 8, (j + borda) * 8 + coluna_offset * 8);
+                tiles[i][j] = novo_tile;
             }
             coluna_offset++;
         }
@@ -59,5 +48,6 @@ public class Tabuleiro extends Actor
 
     public void act()
     {
+
     }
 }
