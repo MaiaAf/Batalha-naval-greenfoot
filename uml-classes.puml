@@ -1,12 +1,16 @@
 @startuml
-class Turno{
+class Jogador{
 Int Turno
 Navio navios
 }
 
 class Tabuleiro{
-Vector tiles<Vector<Tile>>
+- Tile[][] tiles
 Tile tile_selecionado
+GreenfootImage quadro
+}
+
+class World #LightGreen{
 }
 
 Tabuleiro --|> World
@@ -20,12 +24,13 @@ getPos()
 void atirar()
 }
 
-Enum Imagem_Tile {
+Enum Sprite {
 MAR
 MARGEM
 TERRA
 MONTANHA
 }
+
 
 class Tile {
 Greenfootimage image
@@ -40,9 +45,19 @@ class NavioMedio {
 class NavioPequeno {
 }
 
+class Singleton {
++ {static} int tile_tamanho
++ {static} int largura
++ {static} int altura
+}
+
 ' classe implementa ..|> interface'
 
 NavioGrande ..|> Navio
 NavioMedio ..|> Navio
 NavioPequeno ..|> Navio
+Sprite --* Tile
+Tile --* Tabuleiro
+Jogador --* Navio
+
 @enduml

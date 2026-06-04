@@ -1,10 +1,17 @@
 #BlueJ class context
 comment0.target=Tabuleiro
-comment0.text=\n\ Write\ a\ description\ of\ class\ Tabuleiro\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
 comment1.params=
 comment1.target=Tabuleiro()
 comment2.params=
-comment2.target=void\ drawWorld()
-comment3.params=
-comment3.target=void\ act()
-numComments=4
+comment2.target=void\ prepare()
+comment3.params=imagem
+comment3.target=void\ desenhar_fundo(greenfoot.GreenfootImage)
+comment4.params=imagem
+comment4.target=void\ desenhar_tabuleiro(greenfoot.GreenfootImage)
+comment5.params=
+comment5.target=void\ renderizar()
+comment6.params=x\ y
+comment6.target=int[]\ quadro_para_tabuleiro(int,\ int)
+comment7.params=
+comment7.target=void\ act()
+numComments=8

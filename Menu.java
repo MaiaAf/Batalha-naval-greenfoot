@@ -16,7 +16,7 @@ public class Menu extends World
     public Menu()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(Singleton.largura * Singleton.tile_tamanho / 2, Singleton.altura * Singleton.tile_tamanho, 1);
+        super(Singleton.largura * 4 + 4, Singleton.altura *  2 + 4, Singleton.tile_tamanho / 4);
 
         
         prepare();
@@ -24,7 +24,7 @@ public class Menu extends World
 
     private void prepare()
     {
-        showText("Batalha naval!", Singleton.largura * Singleton.tile_tamanho / 4, Singleton.tile_tamanho * 2);
+        showText("Batalha naval!", Singleton.largura * Singleton.tile_tamanho / 4, Singleton.tile_tamanho);
         
         Botao start = new Botao();
         start.setImage(new GreenfootImage("Iniciar", 50, Color.RED, Color.WHITE));
@@ -32,8 +32,8 @@ public class Menu extends World
         Botao sobre = new Botao();
         sobre.setImage(new GreenfootImage("Sobre", 50, Color.RED, Color.WHITE));
         
-        addObject(start, Singleton.tile_tamanho * 15, Singleton.tile_tamanho * 5);
-        addObject(sobre, Singleton.tile_tamanho * 15, Singleton.tile_tamanho * 7);
+        addObject(start, Singleton.tile_tamanho , Singleton.tile_tamanho * 1);
+        addObject(sobre, Singleton.tile_tamanho, Singleton.tile_tamanho * 1);
 
 
         //setWorld(World world)
